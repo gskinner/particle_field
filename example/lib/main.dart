@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:particle_field/particle_field.dart';
 import 'package:rnd/rnd.dart';
 
-// TODO: Add additional examples, especially a proper UI example.
+// TODO: Add additional examples, including interactive ones
 
 void main() {
   runApp(const MyApp());
@@ -27,13 +27,13 @@ class ParticleFieldExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SpriteSheet sparkleSpriteSheet = SpriteSheet(
+    final SpriteSheet sparkleSpriteSheet = SpriteSheet(
       image: const AssetImage('assets/particle-21x23.png'),
       frameWidth: 21,
     );
 
     // super simple ParticleField example:
-    ParticleField field = ParticleField(
+    final ParticleField field = ParticleField(
       spriteSheet: sparkleSpriteSheet,
       // top left will be 0,0:
       origin: Alignment.topLeft,

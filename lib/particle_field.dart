@@ -12,7 +12,27 @@ export 'sprite_sheet.dart';
 /// and an `onTick` handler that manages your [Particle] list.
 ///
 /// ```
-/// TODO: simple example
+/// ParticleField field = ParticleField(
+///   spriteSheet: sparkleSpriteSheet,
+///   // top left will be 0,0:
+///   origin: Alignment.topLeft,
+///   // onTick is where all the magic happens:
+///   onTick: (controller, elapsed, size) {
+///     List<Particle> particles = controller.particles;
+///     // add a new particle each frame:
+///     particles.add(Particle(x: rnd(size.width), vx: rnd(-1, 1)));
+///     // update existing particles:
+///     for (int i = particles.length - 1; i >= 0; i--) {
+///       Particle particle = particles[i];
+///       // call update, which automatically adds vx/vy to x/y
+///       // add some gravity (ie. increase vertical velocity)
+///       // and increment the frame
+///       particle.update(vy: particle.vy + 0.1, frame: particle.frame + 1);
+///       // remove particle if it's out of bounds:
+///       if (!size.contains(particle.toOffset())) particles.removeAt(i);
+///     }
+///   },
+/// )
 /// ```
 class ParticleField extends StatefulWidget {
   const ParticleField({
@@ -50,7 +70,7 @@ class ParticleField extends StatefulWidget {
   /// Specifies to origin point (ie. where `x=0, y=0`) of the particle field's coordinate
   /// system. For example, [Alignment.center] would position the origin in the
   /// middle of the field, [Alignment.topLeft] would set the origin at the top
-  /// left. TODO: Test.
+  /// left.
   final Alignment origin;
 
   @override
