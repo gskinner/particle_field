@@ -44,7 +44,7 @@ particles to move left, and 80% right at a velocity of between 2 and 5:
 particle.vx = rnd(2, 5) * rnd.getSign(0.8)
 ```
 
-If you're looking to add animated effects to you UI in addition to particles,
+If you're looking to add animated effects to your UI in addition to particles,
 check out the [Flutter Animate](https://pub.dev/packages/flutter_animate) library for pre-made effects, custom effects,
 and simplified animated builders.
 
