@@ -3,6 +3,8 @@ Particle Field
 
 A Flutter Widget for adding high performance custom particle effects to your UI.
 
+![Simple Example](https://raw.githubusercontent.com/gskinner/particle_field/assets/readme_example.gif)
+
 Easy to use: just write a simple `onTick` handler to manage a list of particles.
 Architected to be highly extensible. Utilizes `CustomPainter` and `drawAtlas` to
 offer exceptional performance.
