@@ -35,18 +35,19 @@ class ParticleFieldPainter extends CustomPainter {
     for (int i = 0; i < l; i++) {
       Particle o = particles[i];
 
+      // Add a rect entry, which describes the portion (frame) of the sprite sheet image to use as the source.
+      Rect frameRect = frameProvider.getFrame(o.frame);
+      rects.add(frameRect);
+
       // Each particle has a transformation entry, which tells drawAtlas where to draw it.
       transforms.add(RSTransform.fromComponents(
         translateX: o.x + xOffset,
         translateY: o.y + yOffset,
         rotation: o.rotation,
         scale: o.scale * spriteScale,
-        anchorX: 0,
-        anchorY: 0,
+        anchorX: frameRect.width / 2,
+        anchorY: frameRect.height / 2,
       ));
-
-      // Add a rect entry, which describes the portion (frame) of the sprite sheet image to use as the source.
-      rects.add(frameProvider.getFrame(o.frame));
 
       // Add a color entry, which is composited with the frame via the blend mode.
       colors.add(o.color.withOpacity(o.color.opacity * opacity));
