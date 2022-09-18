@@ -64,7 +64,7 @@ class Particle {
 
   /// Sets any values passed, and runs basic logic:
   ///
-  /// * if neither `x` or `y` are specified, adds `vx` / `vy` to them
+  /// * if `x` or `y` are not specified, adds `vx` / `vy`
   /// * if `age` is not specified, increments it by one
   ///
   /// This is provided for convenience, and does not need to be used.
@@ -92,10 +92,8 @@ class Particle {
     if (lifespan != null) this.lifespan = lifespan;
     this.age = age ?? this.age + 1;
 
-    if (x == null && y == null) {
-      this.x += this.vx;
-      this.y += this.vy;
-    }
+    if (x == null) this.x += this.vx;
+    if (y == null) this.y += this.vy;
   }
 
   /// Returns an offset representing this particle's position, optionally
