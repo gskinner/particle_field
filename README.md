@@ -10,6 +10,7 @@ Architected to be highly extensible. Utilizes `CustomPainter` and `drawAtlas` to
 offer exceptional performance.
 
 ``` dart
+// NOTE: this example uses the `rnd` package
 ParticleField field = ParticleField(
   spriteSheet: sparkleSpriteSheet,
   // top left will be 0,0:

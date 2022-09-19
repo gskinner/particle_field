@@ -1,2 +1,2 @@
 # Particle Field Example
-A very simple example of Particle Field in action.
+A  simple example of ParticleField in action.

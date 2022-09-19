@@ -27,7 +27,7 @@ class Particle {
   /// The vertical position of this particle.
   double y;
 
-  /// The scale of this particle. Defaults to 1.
+  /// The scale of this particle.
   double scale;
 
   /// The rotation of this particle in radians.
@@ -39,7 +39,7 @@ class Particle {
 
   /// A color that can be composited with the image frame via [ParticleField.blendMode].
   /// For example, you could modify the opacity of particles by using [BlendMode.srcIn]
-  /// (the default) and adjusting the opacity of the particle `color`:
+  /// (the default) and adjusting the opacity of the particle [color]:
   ///
   /// ```
   /// // in onTick handler:
@@ -62,9 +62,9 @@ class Particle {
   /// By default [update] adds `1` to this value.
   double age;
 
-  /// Sets any values passed, and runs basic logic:
+  /// Sets any values specified, and runs basic logic:
   ///
-  /// * if `x` or `y` are not specified, adds `vx` / `vy`
+  /// * if `x` / `y` are not specified, adds `vx` / `vy` to them
   /// * if `age` is not specified, increments it by one
   ///
   /// This is provided for convenience, and does not need to be used.
@@ -96,7 +96,7 @@ class Particle {
     if (y == null) this.y += this.vy;
   }
 
-  /// Returns an offset representing this particle's position, optionally
+  /// Returns an [Offset] representing this particle's position, optionally
   /// with a transformation applied.
   Offset toOffset([Matrix4? transform]) {
     Offset o = Offset(x, y);
