@@ -67,7 +67,7 @@ class ParticleField extends StatefulWidget {
   /// frame image. Defaults to [BlendMode.srcIn].
   final BlendMode blendMode;
 
-  /// Specifies to origin point (ie. where `x=0, y=0`) of the particle field's coordinate
+  /// Specifies the origin point (ie. where `x=0, y=0`) of the particle field's coordinate
   /// system. For example, [Alignment.center] would position the origin in the
   /// middle of the field, [Alignment.topLeft] would set the origin at the top
   /// left.
@@ -75,6 +75,30 @@ class ParticleField extends StatefulWidget {
 
   @override
   State<ParticleField> createState() => _ParticleFieldState();
+
+  /// A convenience function that layers this [ParticleField] behind the specified
+  /// child, sizes it to match, and optionally scales it (this can be useful
+  /// for providing an "overscan" region).
+  Widget stackBelow({double scale = 1.0, required Widget child}) {
+    return Stack(children: [_stackPrep(scale), child]);
+  }
+
+  /// A convenience function that layers this [ParticleField] in front of the specified
+  /// child, sizes it to match, and optionally scales it (this can be useful
+  /// for providing an "overscan" region).
+  Widget stackAbove({double scale = 1.0, required Widget child}) {
+    return Stack(children: [child, _stackPrep(scale)]);
+  }
+
+  Widget _stackPrep(double scale) {
+    Widget o = this;
+    if (scale != 1.0)
+      o = Transform.scale(
+        scale: scale,
+        child: o,
+      );
+    return Positioned.fill(child: o);
+  }
 }
 
 class _ParticleFieldState extends State<ParticleField>
