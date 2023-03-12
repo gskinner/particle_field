@@ -131,7 +131,7 @@ class ParticleFieldExample extends StatelessWidget {
             child: Align(
               alignment: const Alignment(0, -0.67),
               child: cometParticles.stackBelow(
-                child: const Text("PARTICLES"),
+                child: const Text("FUN"),
                 scale: 1.1,
               ),
             ),

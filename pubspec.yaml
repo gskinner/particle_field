@@ -1,8 +1,8 @@
 name: particle_field
 description: A Flutter Widget for adding high performance custom particle effects to your UI.
-version: 0.0.1+1
+version: 1.0.0
 repository: https://github.com/gskinner/particle_field
-homepage: https://github.com/gskinner/particle_field
+issue_tracker: https://github.com/gskinner/particle_field/issues
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
