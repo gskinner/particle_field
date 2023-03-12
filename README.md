@@ -10,7 +10,7 @@ Architected to be highly extensible. Utilizes `CustomPainter` and `drawAtlas` to
 offer exceptional performance.
 
 ``` dart
-// NOTE: this example uses the `rnd` package
+// NOTE: this example uses `rnd` (see "Complimentary Libraries" below)
 ParticleField field = ParticleField(
   spriteSheet: sparkleSpriteSheet,
   // top left will be 0,0:
@@ -34,8 +34,11 @@ ParticleField field = ParticleField(
 )
 ```
 
+See the [API Reference](https://pub.dev/documentation/particle_field/latest/)
+for more information.
 
-Complimentary libraries
+
+Complimentary Libraries
 ================================================================================
 The [rnd](https://pub.dev/packages/rnd) package makes working with random values
 in your particle systems much simpler. For example, if you wanted 20% of your
@@ -46,8 +49,8 @@ particle.vx = rnd(2, 5) * rnd.getSign(0.8)
 ```
 
 If you're looking to add animated effects to your UI in addition to particles,
-check out the [Flutter Animate](https://pub.dev/packages/flutter_animate) library for pre-made effects, custom effects,
-and simplified animated builders.
+check out the [Flutter Animate](https://pub.dev/packages/flutter_animate)
+library for pre-made effects, custom effects, and simplified animated builders.
 
 ``` dart
 Text("Hello").animate().fadeIn().slide()
